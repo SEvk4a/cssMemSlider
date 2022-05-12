@@ -136,3 +136,19 @@ input {
 #slider-button__4:checked ~ .slider-bottom .slider-button__4 {
   background-color: black;
 }
+
+@media (max-width: 48rem) {
+  .slider-bottom {
+    flex-direction: column;
+  }
+  .bottom-buttons {
+    order: 1;
+    margin: auto;
+  }
+  .text-content {
+    order: 2;
+  }
+  .text {
+    font-size: 1rem;
+  }
+}
