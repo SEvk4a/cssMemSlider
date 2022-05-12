@@ -5,33 +5,41 @@
 }
 
 body {
+  width: 100%;
+  height: 100vh;
   font-family: sans-serif;
-  font-size: 16px;
+  font-size: 1rem;
   background: #dbe6f6;
   background: -webkit-linear-gradient(to left, #c5796d, #dbe6f6);
   background: linear-gradient(to left, #c5796d, #dbe6f6);
 }
 
 .container {
-  padding: 0 20px;
-  max-width: 1280px;
+  padding: 0 1.25rem;
+  max-width: 80rem;
   margin: auto;
 }
 
 h1 {
   text-align: center;
-  padding: 15px 0;
+  padding: 1rem 0;
+}
+
+.slider {
+  box-shadow: 0 0 0.5rem 0.5rem rgb(34 60 80 / 30%);
+  overflow: hidden;
+  border-radius: 1.25rem;
 }
 
 .slider-image__block {
   width: 100%;
-  height: 70vh;
+  height: 50vh;
   overflow: hidden;
-  border-radius: 20px;
 }
 
 .slide {
   height: 100%;
+  width: 100%;
   transition: 0.5s ease-in;
 }
 
@@ -42,10 +50,13 @@ h1 {
 }
 
 .slider-bottom {
-  padding: 20px 15px;
+  padding: 0.75rem;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
+  gap: 1rem;
+  height: 10rem;
+  overflow: hidden;
 }
 
 .bottom-buttons {
@@ -53,34 +64,38 @@ h1 {
 }
 
 .slider-button__block {
-  padding: 10px;
+  padding: 0.65rem;
   cursor: pointer;
+}
+
+.slider-button__block:hover .button-slider {
+  background-color: rgba(0, 0, 0, 0.6);
 }
 
 .button-slider {
   display: block;
-  width: 25px;
-  height: 25px;
-  border: 1px solid black;
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 0.0625rem solid black;
   background-color: rgba(0, 0, 0, 0.4);
   border-radius: 50%;
   transition: 0.5s ease-in;
 }
 
 .text-content {
-  height: 40px;
   overflow: hidden;
+  height: 40rem;
 }
 
 .text {
-  line-height: 40px;
-  font-size: 32px;
+  height: 10rem;
+  font-size: 1.5rem;
   font-weight: bold;
   transition: 0.5s ease-in;
 }
 
 input {
-  opacity: 0;
+  display: none;
 }
 
 /* LOGIC SLIDER */
@@ -88,29 +103,29 @@ input {
 /* IMAGES */
 
 #slider-button__2:checked ~ .slider-image__block .slide-image__1 {
-  margin-top: -70vh;
+  margin-top: -50vh;
 }
 
 #slider-button__3:checked ~ .slider-image__block .slide-image__1 {
-  margin-top: -140vh;
+  margin-top: -100vh;
 }
 
 #slider-button__4:checked ~ .slider-image__block .slide-image__1 {
-  margin-top: -210vh;
+  margin-top: -150vh;
 }
 
 /* TEXT */
 
 #slider-button__2:checked ~ .slider-bottom .text-content .slider-text__1 {
-  margin-top: -40px;
+  margin-top: -10rem;
 }
 
 #slider-button__3:checked ~ .slider-bottom .text-content .slider-text__1 {
-  margin-top: -80px;
+  margin-top: -20rem;
 }
 
 #slider-button__4:checked ~ .slider-bottom .text-content .slider-text__1 {
-  margin-top: -120px;
+  margin-top: -30rem;
 }
 
 /* BUTTONS BACKGROUND */
