@@ -1,0 +1,154 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  font-family: sans-serif;
+  font-size: 1rem;
+  background: #dbe6f6;
+  background: -webkit-linear-gradient(to left, #c5796d, #dbe6f6);
+  background: linear-gradient(to left, #c5796d, #dbe6f6);
+}
+
+.container {
+  padding: 0 1.25rem;
+  max-width: 80rem;
+  margin: auto;
+}
+
+h1 {
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.slider {
+  box-shadow: 0 0 0.5rem 0.5rem rgb(34 60 80 / 30%);
+  overflow: hidden;
+  border-radius: 1.25rem;
+}
+
+.slider-image__block {
+  width: 100%;
+  height: 50vh;
+  overflow: hidden;
+}
+
+.slide {
+  height: 100%;
+  width: 100%;
+  transition: 0.5s ease-in;
+}
+
+.slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.slider-bottom {
+  padding: 0.75rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  height: 10rem;
+  overflow: hidden;
+}
+
+.bottom-buttons {
+  display: flex;
+}
+
+.slider-button__block {
+  padding: 0.65rem;
+  cursor: pointer;
+}
+
+.slider-button__block:hover .button-slider {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.button-slider {
+  display: block;
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 0.0625rem solid black;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 50%;
+  transition: 0.5s ease-in;
+}
+
+.text-content {
+  overflow: hidden;
+  height: 40rem;
+}
+
+.text {
+  height: 10rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  transition: 0.5s ease-in;
+}
+
+input {
+  display: none;
+}
+
+/* LOGIC SLIDER */
+
+/* IMAGES */
+
+#slider-button__2:checked ~ .slider-image__block .slide-image__1 {
+  margin-top: -50vh;
+}
+
+#slider-button__3:checked ~ .slider-image__block .slide-image__1 {
+  margin-top: -100vh;
+}
+
+#slider-button__4:checked ~ .slider-image__block .slide-image__1 {
+  margin-top: -150vh;
+}
+
+/* TEXT */
+
+#slider-button__2:checked ~ .slider-bottom .text-content .slider-text__1 {
+  margin-top: -10rem;
+}
+
+#slider-button__3:checked ~ .slider-bottom .text-content .slider-text__1 {
+  margin-top: -20rem;
+}
+
+#slider-button__4:checked ~ .slider-bottom .text-content .slider-text__1 {
+  margin-top: -30rem;
+}
+
+/* BUTTONS BACKGROUND */
+
+#slider-button__1:checked ~ .slider-bottom .slider-button__1,
+#slider-button__2:checked ~ .slider-bottom .slider-button__2,
+#slider-button__3:checked ~ .slider-bottom .slider-button__3,
+#slider-button__4:checked ~ .slider-bottom .slider-button__4 {
+  background-color: black;
+}
+
+@media (max-width: 48rem) {
+  .slider-bottom {
+    flex-direction: column;
+  }
+  .bottom-buttons {
+    order: 1;
+    margin: auto;
+  }
+  .text-content {
+    order: 2;
+  }
+  .text {
+    font-size: 1rem;
+  }
+}
